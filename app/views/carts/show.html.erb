@@ -3,8 +3,12 @@
 <% end %>
 
 <h2>Your Cart</h2>
+<table>
+  <% %>
+</table>
 <ul>
   <% @cart.line_items.each do |item| %>
-    <li><%= item.product.title %></li>
+    <li><%= item.quantity %>&times;<%= item.product.title %></li>
   <% end %>
 </ul>
+<%= button_to 'Empty Cart', @cart, method: :delete, data: {confirm: 'Are you sure?'} %>
